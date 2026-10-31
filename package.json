@@ -1,1 +1,3 @@
-{"type":"module"}
+{ "name": "bouira-python-studio-dev", "private": true, "type": "module",
+  "scripts": { "build:editor": "cd editor && npm install --no-audit --no-fund && npm run build", "test": "node tests/run_all.mjs" },
+  "devDependencies": { "fake-indexeddb": "6.0.0", "fflate": "0.8.2", "jsdom": "25.0.1" } }
