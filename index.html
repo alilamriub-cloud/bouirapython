@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#3C3F41">
+<title>Bouira Python Studio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body data-view="editor">
+<div id="app">
+  <header id="toolbar">
+    <button class="ib" id="btnSide" data-icon="menu" data-i18n-title="files"></button>
+    <div id="brand"><b>Bouira Python Studio</b><small data-i18n="subtitle"></small></div>
+    <nav id="actions">
+      <button class="tb" id="btnNew" data-icon="newfile"><span data-i18n="new"></span></button>
+      <button class="tb" id="btnOpen" data-icon="folder"><span data-i18n="open"></span></button>
+      <button class="tb" id="btnSave" data-icon="save"><span data-i18n="save"></span></button>
+      <button class="tb run" id="btnRun" data-icon="play"><span data-i18n="run"></span></button>
+      <button class="tb stop" id="btnStop" data-icon="stop" disabled><span data-i18n="stop"></span></button>
+      <button class="tb" id="btnRestart" data-icon="restart"><span data-i18n="restart"></span></button>
+      <button class="tb wide" id="btnExamples" data-icon="school"><span data-i18n="examples"></span></button>
+      <button class="tb wide" id="btnLibs" data-icon="ext"><span data-i18n="libraries"></span></button>
+      <button class="tb wide" id="btnSettings" data-icon="gear"><span data-i18n="settings"></span></button>
+      <button class="tb" id="btnMore" data-icon="more" data-i18n-title="more"><span class="sr" data-i18n="more"></span></button>
+    </nav>
+  </header>
+
+  <div id="workspace">
+    <aside id="side">
+      <div class="sh"><span id="projName">—</span><span class="grow"></span>
+        <button class="mini" id="sNewFile" data-icon="newfile" data-i18n-title="newFile"></button>
+        <button class="mini" id="sNewFolder" data-icon="newfolder" data-i18n-title="newFolder"></button>
+        <button class="mini" id="sProjects" data-icon="folder" data-i18n-title="projects"></button></div>
+      <div id="tree" role="tree"></div>
+    </aside>
+    <main id="center">
+      <section id="editorArea">
+        <div id="tabs" role="tablist"></div>
+        <div id="editorWrap"><div id="editor" dir="ltr"></div><div id="noFile" data-i18n="noFile"></div></div>
+        <div id="keys" dir="ltr"></div>
+      </section>
+      <div id="handle"><span></span></div>
+      <section id="panel">
+        <div id="panelHead">
+          <button class="ptab active" data-tab="console" data-i18n="console"></button>
+          <button class="ptab" data-tab="plots"><span data-i18n="plots"></span> <span id="plotCount" class="badge" hidden>0</span></button>
+          <span class="grow"></span>
+          <button class="ib sm" id="btnBackEditor" data-icon="code" data-i18n-title="editor"></button>
+          <button class="ib sm" id="btnClear" data-icon="clear" data-i18n-title="clearConsole"></button>
+        </div>
+        <div id="consoleWrap" class="pane" dir="ltr">
+          <pre id="out"></pre>
+          <form id="inputRow" hidden autocomplete="off">
+            <input id="stdin" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" data-i18n-ph="inputPlaceholder">
+            <button type="submit" class="send" data-i18n="send"></button>
+          </form>
+        </div>
+        <div id="plots" class="pane" hidden></div>
+      </section>
+    </main>
+  </div>
+
+  <footer id="status">
+    <span id="stFile">—</span><span id="stPos"></span><span class="grow"></span>
+    <span id="stRuntime" class="loading" data-i18n="st_loading"></span>
+    <span class="grow"></span><span id="stPy"></span><span id="stNet"></span>
+  </footer>
+  <nav id="bottomNav">
+    <button data-view="files" data-icon="folder"><span data-i18n="files"></span></button>
+    <button data-view="editor" data-icon="code"><span data-i18n="editor"></span></button>
+    <button data-view="output" data-icon="terminal"><span data-i18n="output"></span></button>
+  </nav>
+</div>
+
+<div id="menu" hidden></div>
+<div id="modal" hidden><div class="card"><div class="mh"><span id="mTitle"></span><button class="ib sm" id="mClose" data-icon="close" data-i18n-title="close"></button></div><div id="mBody"></div></div></div>
+<div id="toast" hidden></div>
+<input type="file" id="filePicker" multiple accept=".py,.txt,.csv,.json,.md,.zip,text/*,application/zip" hidden>
+
+<script src="js/vendor.bundle.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

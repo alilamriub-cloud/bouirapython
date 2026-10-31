@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Bouira Python Studio",
+  "short_name": "Bouira Python",
+  "description": "Offline Python IDE – Python Learning Lab, University of Bouira",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#2B2B2B",
+  "theme_color": "#3C3F41",
+  "lang": "en",
+  "dir": "auto",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
